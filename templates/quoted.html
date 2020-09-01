@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input autocomplete="on" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+    <br>
+    <div class="grid">
+        <div class="quote-header h3">{{ quote.name }}({{ quote.symbol }})</div>
+        <p class="quote-price">
+            <span class="h1">{{ quote.price }}$</span><span class="h5">.USD &nbsp;</span> 
+            {% if quote.change > 0 %}
+                <span class="change-increase h3">
+                    +{{ quote.change }}$ (+{{ quote.changePercent }}%)
+                </span>
+            {% else %}
+                <span class="change-decrease h3">
+                    {{quote.change}}$ ({{quote.changePercent}}%)
+                </span>
+            {% endif %}
+        </p>
+        <div class="quote-source h5">{{quote.latestSource}}</div>
+        <div class="quote-time h5">{{quote.latestTime}}</div>
+        <div class="quote-market h5">Market: {{quote.isUSMarketOpen}}</div>
+        <div class="grid-content">
+            <div class="quote-ask">ASK: {{quote.askPrice}}$ x {{quote.askSize}}</div>
+            <div class="quote-bid"> BID: {{quote.bidPrice}}$ x {{quote.bidSize}}</div>
+            <div class="quote-open">OPEN: {{quote.open}}$</div>
+            <div class="quote-close">CLOSE: {{quote.close}}$</div>
+            <div class="quote-high">HIGH: {{quote.high}}$</div>
+            <div class="quote-wkhigh"> WK52 HIGH: {{quote.week52High}}$</div>
+            <div class="quote-low">LOW: {{quote.low}}$</div>
+            <div class="quote-wklow"> WK52 LOW: {{quote.week52Low}}$</div>        
+        </div>
+    </div>
+{% endblock %}

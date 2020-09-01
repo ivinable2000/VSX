@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped table-hover">
+    <caption>History of Transactions</caption>
+    <thead class="thead-dark">
+        <th scope="col">Symbol</th>
+        <th scope="col">Shares</th>
+        <th scope="col">Share Price</th>
+        <th scope="col">Transaction</th>
+        <th scope="col">Date</th>
+    </thead>
+    <tbody>
+        {% if transactions %}
+        {% for item in transactions %}
+        <tr>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[3] }}</td>
+            <td>{{ item[0] }}</td>
+            <td style="text-transform: uppercase;">{{ item[4] }}</td>
+            <td>{{ item[2] }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="5">No transactions!</td>
+        </tr>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

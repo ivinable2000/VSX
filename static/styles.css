@@ -1,0 +1,153 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .black
+{
+    color: #3f4e55;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+    padding-bottom: 0.5rem;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+.grid
+{
+    display: grid;
+    grid-template-columns: 25% 1fr 1fr 1fr 25%;
+    grid-template-areas: 
+    ". quote-header quote-header quote-header ."
+    ". quote-price quote-price quote-price ."
+    ". quote-source quote-time quote-market ."
+    ". grid-content grid-content grid-content .";
+}
+
+.quote-header
+{
+    grid-area: quote-header;
+    justify-self: start;
+}
+
+.quote-price
+{
+    grid-area: quote-price;
+    justify-self: start;
+}
+
+.quote-source 
+{
+    grid-area: quote-source;
+    justify-self: stretch;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.quote-time 
+{
+    grid-area: quote-time;
+    justify-self: stretch;
+    border-right: 2px solid black;
+}
+
+.quote-market 
+{
+    grid-area: quote-market;
+    justify-self: stretch;
+    border-right: 2px solid black;
+}
+
+.grid-content
+{
+    grid-area: grid-content;
+    display: grid;
+    justify-items: start;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "quote-ask quote-bid"
+    "quote-open quote-open"
+    "quote-close quote-close"
+    "quote-high quote-wkhigh"
+    "quote-low quote-wklow";
+}
+
+.quote-ask
+{
+    grid-area: quote-ask;
+}
+
+.quote-bid
+{
+    grid-area: quote-bid;
+    border-left: 1px solid black;
+}
+
+.quote-open
+{
+    grid-area: quote-open;
+}
+
+.quote-close
+{
+    grid-area: quote-close;
+}
+
+.quote-high
+{
+    grid-area: quote-high;
+}
+
+.quote-wkhigh
+{
+    grid-area: quote-wkhigh;
+    border-left: 1px solid black;
+}
+
+.quote-low
+{
+    grid-area: quote-low;
+}
+
+.quote-wklow
+{
+    grid-area: quote-wklow;
+    border-left: 1px solid black;
+}
+
+.change-increase
+{
+    color: green;
+    display: inline;
+}
+
+.change-decrease
+{
+    color: red;
+    display: inline;
+}
+
