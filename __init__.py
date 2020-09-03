@@ -33,7 +33,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure sqlite3 Library to use SQLite database
-conn = sqlite3.connect("./db/finance.db", check_same_thread=False)
+conn = sqlite3.connect("/var/www/VSX/VSX/db/finance.db", check_same_thread=False)
 db = conn.cursor()
 tableSetup(db)
 
